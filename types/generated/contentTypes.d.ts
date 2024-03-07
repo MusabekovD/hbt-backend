@@ -362,64 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiTestingTesting extends Schema.CollectionType {
-  collectionName: 'testings';
-  info: {
-    singularName: 'testing';
-    pluralName: 'testings';
-    displayName: 'Testing';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.Unique;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::testing.testing',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::testing.testing',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiTesting2Testing2 extends Schema.CollectionType {
-  collectionName: 'testing2s';
-  info: {
-    singularName: 'testing2';
-    pluralName: 'testing2s';
-    displayName: 'Testing2...';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    Testing: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::testing2.testing2',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::testing2.testing2',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -856,8 +798,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::testing.testing': ApiTestingTesting;
-      'api::testing2.testing2': ApiTesting2Testing2;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
