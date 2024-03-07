@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bathrooms",
+  "info": {
+    "singularName": "bathroom",
+    "pluralName": "bathrooms",
+    "displayName": "bathroom"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "description": {
+      "type": "text",
+      "unique": false
+    },
+    "photo_main": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "photo_about": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}
